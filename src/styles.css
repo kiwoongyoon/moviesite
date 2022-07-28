@@ -1,0 +1,91 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+body {
+  background-color: black;
+  color: white;
+  margin: 0;
+}
+.root {
+  display: flex;
+  flex-direction: column;
+}
+header {
+  background-color: #373b69;
+  display: flex;
+  padding: 1rem;
+  justify-content: flex-end;
+}
+.search {
+  border: 2px solid #22254b;
+  background-color: black;
+  border-radius: 50px;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0.5rem 1.5rem;
+}
+.movie {
+  background-color: #373b69;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  margin: 1rem;
+  width: 300px;
+}
+.movie img {
+  width: 100%;
+  object-fit: cover;
+  /* 만약 더 작은 사진이 첨부된 경우 규격에 맞추기 위해서 ! */
+  height: 450px;
+}
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.movie-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.movie-info h3 {
+  margin: 0;
+}
+.movie-over {
+  background-color: #fff;
+  position: absolute;
+  padding: 1rem;
+  /* absolute로 지정하면 자신 부모 요소를 기준으로 
+  위치한다.  */
+  color: #22254b;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  max-height: 100%;
+  /* max-height을 설정하면 영화 소개가 길어질 때 
+  스크롤바 자동으로 만들어진다. */
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+}
+.movie:hover .movie-over {
+  transform: translateY(0%);
+}
+.tag {
+  background-color: #22254b;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-size: bold;
+}
+.tag.green {
+  color: green;
+}
+.tag.orange {
+  color: orange;
+}
+.tag.red {
+  color: red;
+}
